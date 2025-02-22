@@ -3,4 +3,4 @@
 
 - Nama : Tia Ramadhani
 - Nim : 0110124202
--Rombel : SI12
+- Rombel : SI12
