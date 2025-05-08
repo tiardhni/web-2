@@ -14,12 +14,12 @@ class Connection
     {
         $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
         $dotenv->safeLoad();
-        $dotenv->required(['DB_HOST', 'DB_NAME', 'DB_USER', 'DB_PASS']);
+        $dotenv->required(['DB_HOST', 'DB_NAME', 'DB_USER', 'DB_PASSWORD']);
 
         $host = $_ENV['DB_HOST'];
         $db = $_ENV['DB_NAME'];
         $user = $_ENV['DB_USER'];
-        $password = $_ENV['DB_PASS'];
+        $password = $_ENV['DB_PASSWORD'];
 
         $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 

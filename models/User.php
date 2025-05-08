@@ -64,6 +64,7 @@ class User
 
         return $statement->execute();
     }
+
     public static function delete($id)
     {
         $pdo = Connection::make();

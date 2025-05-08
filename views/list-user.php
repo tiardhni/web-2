@@ -27,22 +27,18 @@ $users = User::get();
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="dashboard.php">Praktikum 06</a>
         <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
-                class="fas fa-bars"></i></button>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..."
-                    aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i
-                        class="fas fa-search"></i></button>
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
             </div>
         </form>
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!">Settings</a></li>
                     <li><a class="dropdown-item" href="#!">Activity Log</a></li>
@@ -78,77 +74,74 @@ $users = User::get();
                     <h1 class="mt-4">User</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a></li>
-                        <li class="breadcrumb-item active">User</a></li>
+                        <li class="breadcrumb-item active">User</li>
                     </ol>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        List User
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-3 text-end">
-                            <a href="create-user.php" class="btn btn-success">
-                                <i class="fas fa-plus"></i> Add User
-                            </a>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            List User
                         </div>
-                        <table id="datatablesSimple">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Gender</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($users as $index => $user) : ?>
+                        <div class="card-body">
+                            <div class="mb-3 text-end">
+                                <a href="create-user.php" class="btn btn-success">
+                                    <i class="fas fa-plus"></i> Add User
+                                </a>
+                            </div>
+                            <table id="datatablesSimple">
+                                <thead>
                                     <tr>
-                                        <td><?= $index + 1 ?></td>
-                                        <td><?= $user['firstname'] ?></td>
-                                        <td><?= $user['lastname'] ?></td>
-                                        <td><?= $user['gender'] ?></td>
-                                        <td>
-                                            <a href="detail-user.php?id=<?= $user['id'] ?>" class="btn btn-primary">
-                                                <i class="fas fa-eye"></i> Detail
-                                            </a>
-
-                                            <a href="edit-user.php?id=<?= $user['id'] ?>" class="btn btn-warning">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </a>
-
-                                            <a href="delete-user.php?id=<?= $user['id'] ?>" class="btn btn-danger">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </a>
-                                        </td>
+                                        <th>NO.</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Gender</th>
+                                        <th>Action</th>
                                     </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($users as $index => $user) : ?>
+                                        <tr>
+                                            <td><?= $index + 1 ?></td>
+                                            <td><?= $user['firstname'] ?></td>
+                                            <td><?= $user['lastname'] ?></td>
+                                            <td><?= $user['gender'] ?></td>
+                                            <td>
+                                                <a href="detail-user.php?id=<?= $user['id'] ?>" class="btn btn-primary">
+                                                    <i class="fas fa-eye"></i> Detail
+                                                </a>
+
+                                                <a href="edit-user.php?id=<?= $user['id'] ?>" class="btn btn-warning">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </a>
+
+                                                <a href="delete-user.php?id=<?= $user['id'] ?>" class="btn btn-danger">
+                                                    <i class="fas fa-trash"></i> Delete
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; PW2 <?= date('Y') ?></div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
-        </main>
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid px-4">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; PW2 <?= date('Y') ?></div>
-                    <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="../public/js/scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="../public/js/datatables-simple-demo.js"></script>
 </body>
 
